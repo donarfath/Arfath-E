@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --bg-main: #F5EBDD;
+    --bg-secondary: #FFF9F0;
+    --brown-primary: #6F4E37;
+    --brown-deep: #3E2C23;
+    --blue-baby: #A7D8F0;
+    --blue-soft: #DCEFFA;
+    --text-main: #352A24;
+    --text-secondary: #786B60;
+    --border-warm: #E5D8C8;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-padding-top: 5rem;
+    background-color: #F5EBDD;
+    color: #352A24;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.card-elevated {
+  box-shadow: 0 10px 28px -14px rgba(62, 44, 35, 0.14);
+}
+
+.card-elevated:hover {
+  box-shadow: 0 16px 36px -14px rgba(62, 44, 35, 0.18);
+}
+
+.hero-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(111, 78, 55, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(111, 78, 55, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.hero-dot-matrix {
+  background-image: radial-gradient(rgba(111, 78, 55, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
