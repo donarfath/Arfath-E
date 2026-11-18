@@ -62,9 +62,6 @@ export function InternshipSection({ onOpenResume }: InternshipSectionProps) {
                       <Briefcase className="h-3.5 w-3.5" />
                       <span>{internship.type}</span>
                     </div>
-                    <span className="rounded-md border border-[#A7D8F0] bg-[#DCEFFA] px-2.5 py-1 font-mono text-xs font-semibold text-[#3E2C23] tabular-nums">
-                      C.I.D: {internship.certificateId}
-                    </span>
                   </div>
 
                   <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#3E2C23]">
@@ -137,7 +134,7 @@ export function InternshipSection({ onOpenResume }: InternshipSectionProps) {
                     src={internship.certificateImageUrl}
                     alt={`${internship.company} Certificate of Completion for ${internship.role}`}
                     fallbackTitle={`${internship.company} — ${internship.role}`}
-                    fallbackSubtitle={`C.I.D: ${internship.certificateId}`}
+                    fallbackSubtitle={internship.dateRange}
                     className="h-full w-full rounded-lg object-contain"
                   />
                 </button>
@@ -239,7 +236,7 @@ export function InternshipSection({ onOpenResume }: InternshipSectionProps) {
                   {selectedCert.company} — {selectedCert.role} Certificate
                 </h3>
                 <p className="mt-0.5 font-mono text-xs text-[#786B60] tabular-nums">
-                  C.I.D: {selectedCert.certificateId} · {selectedCert.dateRange}
+                  {selectedCert.dateRange} · Issued {selectedCert.issueDate}
                 </p>
               </div>
 
@@ -259,7 +256,7 @@ export function InternshipSection({ onOpenResume }: InternshipSectionProps) {
                   src={selectedCert.certificateImageUrl}
                   alt={`${selectedCert.company} Certificate of Completion for ${selectedCert.role}`}
                   fallbackTitle={`${selectedCert.company} — ${selectedCert.role}`}
-                  fallbackSubtitle={`C.I.D: ${selectedCert.certificateId}`}
+                  fallbackSubtitle={selectedCert.dateRange}
                   className="mx-auto max-h-[70vh] w-full rounded-lg object-contain"
                 />
               </div>

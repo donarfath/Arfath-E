@@ -26,8 +26,16 @@ export interface CertificateItem {
   id: string;
   title: string;
   issuer: string;
-  subtitle: string;
-  verifyUrl: string;
+  issuerTagline: string;
+  certificateType: string;
+  issueDate: string;
+  certificateId: string;
+  verificationNote: string;
+  certificateImageUrl: string;
+  fallbackImageUrl?: string;
+  summary: string;
+  highlights: string[];
+  skills: string[];
 }
 
 export const PROFILE = {
@@ -181,31 +189,74 @@ export const CERTIFICATES: CertificateItem[] = [
   {
     id: 'coursera-ai-ml',
     title: 'Foundations of AI and Machine Learning',
-    issuer: 'Coursera',
-    subtitle: 'Verified Course Accomplishment',
-    verifyUrl:
-      'https://www.coursera.org/account/accomplishments/verify/SG2YLM6B75IO?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course',
+    issuer: 'Microsoft · Coursera',
+    issuerTagline: 'Authorized by Microsoft and offered through Coursera',
+    certificateType: 'Course Certificate',
+    issueDate: '05 Apr 2026',
+    certificateId: 'SG2YLM6B75IO',
+    verificationNote: 'Identity & Completion Verified',
+    certificateImageUrl: '/assets/certificates/coursera-ai-ml.jpg',
+    summary:
+      'Successfully completed the online course authorized by Microsoft on Coursera covering core AI & ML infrastructure, data pipelines, model development frameworks, and deployment readiness.',
+    highlights: [
+      'Studied critical AI & ML infrastructure components, data preprocessing workflows, and model frameworks.',
+      'Verified by Coursera and Microsoft (Certificate ID: SG2YLM6B75IO) on 05 Apr 2026.',
+    ],
+    skills: ['AI & ML', 'Data Pipelines', 'Model Deployment', 'Python'],
+  },
+  {
+    id: 'naan-mudhalvan',
+    title: 'Naan Mudhalvan Digital Skills Program',
+    issuer: 'TNSDC · Microsoft',
+    issuerTagline: 'Government of Tamil Nadu — Naan Mudhalvan Scheme',
+    certificateType: 'Certificate of Achievement',
+    issueDate: '17 Nov 2025',
+    certificateId: 'NMO2526EAU35688864444',
+    verificationNote: 'Digitally Signed · Reg No: 510924148001',
+    certificateImageUrl: '/assets/certificates/naan-mudhalvan.jpg',
+    summary:
+      'Awarded Certificate of Achievement for the successful completion of Digital Skills sponsored by the Naan Mudhalvan Program, Tamil Nadu Skill Development Corporation, and conducted by Microsoft.',
+    highlights: [
+      'Completed statewide technical skill advancement curriculum conducted in collaboration with Microsoft.',
+      'Digitally signed by Tamil Nadu Skill Development Corporation on 17/11/2025.',
+    ],
+    skills: ['Digital Skills', 'Microsoft', 'Technical Advancement'],
   },
   {
     id: 'python-beginners',
     title: 'Python for Beginners',
-    issuer: 'Skill Development Program',
-    subtitle: 'Programming Foundations',
-    verifyUrl: 'https://ibb.co/LDyJ0q6g',
+    issuer: 'Simplilearn SkillUP',
+    issuerTagline: 'Online Skill Development Program',
+    certificateType: 'Certificate of Completion',
+    issueDate: '12 Oct 2025',
+    certificateId: '9152474',
+    verificationNote: 'Verified Credential',
+    certificateImageUrl: '/assets/certificates/python-beginners.jpg',
+    summary:
+      'Completed the Python for Beginners online course via Simplilearn SkillUP, building strong foundations in Python syntax, control structures, and foundational scripting.',
+    highlights: [
+      'Strengthened core programming logic, data types, loops, and modular Python basics.',
+      'Certified by Simplilearn (Certificate code: 9152474) on 12 October 2025.',
+    ],
+    skills: ['Python', 'Control Flow', 'Programming Foundations'],
   },
   {
     id: 'tcs-ion',
     title: 'TCS iON Career Edge – Young Professional',
     issuer: 'TCS iON',
-    subtitle: 'Corporate Readiness Certification',
-    verifyUrl: 'https://ibb.co/Fktb4PhQ',
-  },
-  {
-    id: 'naan-mudhalvan',
-    title: 'Naan Mudhalvan Digital Skills Program',
-    issuer: 'Government Initiative Technical Course',
-    subtitle: 'Technical Skill Advancement',
-    verifyUrl: 'https://ibb.co/TBx7GHbt',
+    issuerTagline: 'Tata Consultancy Services',
+    certificateType: 'Certificate of Achievement',
+    issueDate: '22 Jul 2025',
+    certificateId: '240640-28614784-1016',
+    verificationNote: '08 Jul 2025 – 22 Jul 2025 · Certified',
+    certificateImageUrl: '/assets/certificates/tcs-ion.jpg',
+    summary:
+      'Completed the TCS iON Career Edge – Young Professional course covering IT Foundational Skills, Overview of Artificial Intelligence, structured communication, and corporate readiness.',
+    highlights: [
+      'Covered IT Foundational Skills, Overview of Artificial Intelligence, and Accounting Fundamentals.',
+      'Completed professional communication, interview, and presentation modules (Cert ID: 240640-28614784-1016).',
+    ],
+    skills: ['IT Foundations', 'Overview of AI', 'Communication', 'Career Readiness'],
   },
 ];
 
@@ -246,7 +297,7 @@ export const COMPLETED_INTERNSHIPS: CompletedInternship[] = [
     highlights: [
       'Completed 12 weeks of structured Python programming tasks and real project deliverables.',
       'Recognized by the CodeVedX team for consistent execution, problem solving, and project contributions.',
-      'Awarded QR-verified Certificate of Completion (C.I.D: CV-PP-2026-1538) on 23/10/2026.',
+      'Awarded QR-verified Certificate of Completion on 23/10/2026.',
     ],
     skills: ['Python Programming', 'Task Execution', 'Project Delivery', '12-Week Internship'],
   },

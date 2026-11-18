@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   ArrowUp,
   ArrowUpRight,
-  Award,
   Check,
   Code2,
   Copy,
@@ -13,6 +12,7 @@ import {
   Mail,
   MapPin,
 } from 'lucide-react';
+import { CertificationsSection } from './components/CertificationsSection';
 import { Hero } from './components/Hero';
 import { InternshipSection } from './components/InternshipSection';
 import { Navbar } from './components/Navbar';
@@ -20,7 +20,6 @@ import { ProjectLightbox } from './components/ProjectLightbox';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ResumeModal } from './components/ResumeModal';
 import {
-  CERTIFICATES,
   EDUCATION_TIMELINE,
   PROFILE,
   ProjectItem,
@@ -218,51 +217,7 @@ export default function App() {
         </section>
 
         {/* 8. Certifications Section */}
-        <section id="certificates" className="border-b border-[#DFCEBA] bg-[#F5EBDD] py-20 md:py-24">
-          <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-              <div>
-                <span className="inline-block h-1 w-10 rounded-sm bg-[#A7D8F0]" aria-hidden="true" />
-                <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#3E2C23]">
-                  Certifications
-                </h2>
-              </div>
-              <p className="max-w-md text-sm text-[#786B60]">
-                Verified courses and industry skill programs completed alongside undergraduate study.
-              </p>
-            </div>
-
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-              {CERTIFICATES.map((cert) => (
-                <a
-                  key={cert.id}
-                  href={cert.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-elevated group flex items-start justify-between gap-4 rounded-2xl border border-[#E5D8C8] bg-[#FFF9F0] p-6 transition-all duration-150 hover:-translate-y-0.5 hover:border-[#6F4E37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[#A7D8F0]/70 bg-[#DCEFFA] text-[#3E2C23] transition-colors group-hover:bg-[#A7D8F0]">
-                      <Award className="h-5 w-5" strokeWidth={1.75} />
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-[#3E2C23] transition-colors group-hover:text-[#6F4E37]">
-                        {cert.title}
-                      </h3>
-                      <p className="mt-1 text-sm font-medium text-[#6F4E37]">{cert.issuer}</p>
-                      <p className="mt-1 text-xs text-[#786B60]">{cert.subtitle}</p>
-                    </div>
-                  </div>
-
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#6F4E37] whitespace-nowrap shrink-0">
-                    Verify
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
+        <CertificationsSection />
 
         {/* 8. Contact Section (Soft Baby-Blue Background + Brown Heading & Primary Button) */}
         <section
