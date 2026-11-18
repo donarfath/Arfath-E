@@ -146,7 +146,7 @@ export function Hero() {
               className="mt-3 font-extrabold tracking-tight text-[#3E2C23] text-balance"
               style={{ fontSize: 'clamp(2.65rem, 4.9vw, 4.15rem)', lineHeight: 1.06 }}
             >
-              {PROFILE.name}
+              Arfath
             </h1>
 
             <h2 className="mt-3 text-xl font-bold text-[#6F4E37] md:text-2xl">
