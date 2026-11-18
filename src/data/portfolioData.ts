@@ -49,7 +49,7 @@ export const PROFILE = {
   githubHandle: 'github.com/donarfath',
   linkedinUrl: 'https://www.linkedin.com/in/arfath0311/',
   linkedinHandle: 'linkedin.com/in/arfath0311',
-  resumeUrl: '/resume/Arfath_E_Resume.pdf',
+  resumeUrl: '/assets/aistudio/ResumeMe_3acaf722.pdf',
   externalResumeUrl: 'https://donarfath.github.io/Arfath_Portfolio/resume/Arfath_E_Resume.pdf',
   heroImage: '/assets/images/profile.jpg',
   heroFallbackImage: '/src/assets/images/hero_developer_portrait_1794986075464.jpg',
@@ -208,3 +208,85 @@ export const CERTIFICATES: CertificateItem[] = [
     verifyUrl: 'https://ibb.co/TBx7GHbt',
   },
 ];
+
+export interface CompletedInternship {
+  id: string;
+  role: string;
+  company: string;
+  companyTagline: string;
+  type: string;
+  duration: string;
+  dateRange: string;
+  issueDate: string;
+  certificateId: string;
+  issuerEmail: string;
+  certificateImageUrl: string;
+  certificatePdfUrl: string;
+  summary: string;
+  highlights: string[];
+  skills: string[];
+}
+
+export const COMPLETED_INTERNSHIPS: CompletedInternship[] = [
+  {
+    id: 'codevedx-python-internship',
+    role: 'Python Programming Intern',
+    company: 'CodeVedX',
+    companyTagline: 'Coding Knowledge, Delivered X-factor.',
+    type: 'Virtual Internship · 12 Weeks',
+    duration: '12 Weeks',
+    dateRange: '28 Jul 2026 – 20 Oct 2026',
+    issueDate: '23 Oct 2026',
+    certificateId: 'CV-PP-2026-1538',
+    issuerEmail: 'service.codevedx@gmail.com',
+    certificateImageUrl: '/assets/aistudio/Arfath_E_0bf5431f.jpg',
+    certificatePdfUrl: '/assets/aistudio/Arfath_E__cb9337d4.pdf',
+    summary:
+      'Successfully completed a 12-week virtual internship program in Python Programming at CodeVedX, earning commendation for showcased technical skills and contributions across tasks and projects.',
+    highlights: [
+      'Completed 12 weeks of structured Python programming tasks and real project deliverables.',
+      'Recognized by the CodeVedX team for consistent execution, problem solving, and project contributions.',
+      'Awarded QR-verified Certificate of Completion (C.I.D: CV-PP-2026-1538) on 23/10/2026.',
+    ],
+    skills: ['Python Programming', 'Task Execution', 'Project Delivery', '12-Week Internship'],
+  },
+];
+
+export interface InternshipRole {
+  index: string;
+  role: string;
+  summary: string;
+  tools: string[];
+}
+
+export const INTERNSHIP_PROFILE = {
+  headline: 'Open for 2026–2027 Software & AI/ML Internships',
+  availability: 'Immediate / Academic Break & Part-Time Remote',
+  locations: 'Chennai, Tamil Nadu · Hybrid · Remote',
+  objective:
+    'Building on my 12-week Python Programming internship at CodeVedX, I am seeking hands-on roles in frontend web development, Python engineering, and AI/ML.',
+  targetRoles: [
+    {
+      index: '01',
+      role: 'Frontend Web Developer Intern',
+      summary:
+        'Crafting clean, responsive user interfaces, semantic layouts, and interactive components backed by version-controlled workflows.',
+      tools: ['HTML', 'CSS', 'JavaScript', 'React.js'],
+    },
+    {
+      index: '02',
+      role: 'AI / Machine Learning Intern',
+      summary:
+        'Supporting data preprocessing, classical ML modeling, evaluation pipelines, and retrieval-augmented generation (RAG) prototypes.',
+      tools: ['Python', 'NumPy', 'Pandas', 'Scikit-learn'],
+    },
+    {
+      index: '03',
+      role: 'Python Developer Intern',
+      summary:
+        'Building modular Python scripts, structured CRUD utilities, SQL-backed workflows, and security-focused command-line tools.',
+      tools: ['Python', 'SQL', 'Git', 'GitHub'],
+    },
+  ] as InternshipRole[],
+};
+

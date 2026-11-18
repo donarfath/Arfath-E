@@ -1,11 +1,11 @@
-import { ArrowDownRight, ArrowUpRight, Download, Mail, MapPin } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { PROFILE } from '../data/portfolioData';
 import { ResilientImage } from './ResilientImage';
 
 const HERO_HIGHLIGHTS = [
-  { label: 'Focus Area', value: 'Frontend Web & AI / ML' },
-  { label: 'Primary Stack', value: 'Python · JavaScript · React.js · SQL' },
-  { label: 'Status', value: 'Open to Software & AI Internships' },
+  { index: '01', label: 'Focus Area', value: 'Frontend Web & AI / ML' },
+  { index: '02', label: 'Primary Stack', value: 'Python · JavaScript · React.js · SQL' },
+  { index: '03', label: 'Experience', value: 'CodeVedX Python Intern · Open for Roles' },
 ];
 
 export function Hero() {
@@ -160,17 +160,8 @@ export function Hero() {
             {/* Primary & Secondary CTA Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
               <a
-                href={PROFILE.resumeUrl}
-                download="Arfath_E_Resume.pdf"
-                className="inline-flex min-h-[46px] items-center gap-2 rounded-xl bg-[#6F4E37] px-6 py-3 text-sm font-semibold text-[#FFF9F0] shadow-xs transition-all duration-150 hover:bg-[#3E2C23] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
-              >
-                <Download className="h-4 w-4" />
-                Download Resume
-              </a>
-
-              <a
                 href="#projects"
-                className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-[#8ECAE6] bg-[#A7D8F0] px-6 py-3 text-sm font-semibold text-[#3E2C23] transition-colors duration-150 hover:bg-[#DCEFFA] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
+                className="inline-flex min-h-[46px] items-center gap-2 rounded-xl bg-[#6F4E37] px-6 py-3 text-sm font-semibold text-[#FFF9F0] shadow-xs transition-all duration-150 hover:bg-[#3E2C23] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
               >
                 Explore Projects
                 <ArrowDownRight className="h-4 w-4" />
@@ -178,7 +169,7 @@ export function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex min-h-[46px] items-center gap-1.5 px-3 py-2 text-sm font-semibold text-[#6F4E37] transition-colors hover:text-[#3E2C23] whitespace-nowrap shrink-0"
+                className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-[#8ECAE6] bg-[#A7D8F0] px-6 py-3 text-sm font-semibold text-[#3E2C23] transition-colors duration-150 hover:bg-[#DCEFFA] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
               >
                 <Mail className="h-4 w-4" />
                 Contact
@@ -261,11 +252,16 @@ export function Hero() {
         </div>
 
         {/* Clean 3-Column Developer Highlights Strip */}
-        <div className="mt-14 grid grid-cols-1 divide-y divide-[#DFCEBA] rounded-2xl border border-[#DFCEBA] bg-[#FFF9F0]/90 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div className="card-elevated mt-14 grid grid-cols-1 divide-y divide-[#DFCEBA] rounded-2xl border border-[#DFCEBA] bg-[#FFF9F0] md:grid-cols-3 md:divide-x md:divide-y-0">
           {HERO_HIGHLIGHTS.map((item) => (
-            <div key={item.label} className="px-6 py-4">
-              <p className="text-xs font-semibold text-[#786B60]">{item.label}</p>
-              <p className="mt-1 text-sm font-bold text-[#3E2C23]">{item.value}</p>
+            <div key={item.label} className="px-6 py-4.5">
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs font-semibold text-[#786B60]">{item.label}</p>
+                <span className="font-mono text-[11px] font-semibold text-[#6F4E37] tabular-nums">
+                  {item.index}
+                </span>
+              </div>
+              <p className="mt-1.5 text-sm font-bold text-[#3E2C23]">{item.value}</p>
             </div>
           ))}
         </div>

@@ -30,23 +30,18 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
               key={project.id}
               className="card-elevated group flex flex-col overflow-hidden rounded-2xl border border-[#DFCEBA] bg-[#FFF9F0] transition-all duration-200 hover:-translate-y-1 hover:border-[#6F4E37]"
             >
-              {/* Soft Baby-Blue Framed Media Preview */}
+              {/* Soft Baby-Blue Framed Media Display (Non-clickable; Preview button opens details) */}
               <div className="border-b border-[#DFCEBA] bg-[#DCEFFA] p-4">
-                <button
-                  type="button"
-                  onClick={() => onSelectProject(project)}
-                  aria-label={`Preview ${project.title}`}
-                  className="block aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#8ECAE6] bg-[#FFF9F0] text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6F4E37]"
-                >
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#8ECAE6] bg-[#FFF9F0]">
                   <ResilientImage
                     src={project.image}
                     fallbackSrc={project.fallbackImage}
                     alt={project.imageAlt}
                     fallbackTitle={project.title}
                     fallbackSubtitle={project.tech.join(' · ')}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover"
                   />
-                </button>
+                </div>
               </div>
 
               {/* Card Body */}

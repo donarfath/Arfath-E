@@ -14,6 +14,7 @@ import {
   MapPin,
 } from 'lucide-react';
 import { Hero } from './components/Hero';
+import { InternshipSection } from './components/InternshipSection';
 import { Navbar } from './components/Navbar';
 import { ProjectLightbox } from './components/ProjectLightbox';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -160,15 +161,18 @@ export default function App() {
         {/* 5. Featured Projects Section (Separate Component) */}
         <ProjectsSection onSelectProject={setActiveProject} />
 
-        {/* 6. Education Timeline Section */}
-        <section id="education" className="border-b border-[#E5D8C8] bg-[#F5EBDD] py-20 md:py-24">
+        {/* 6. Internships & Availability Section */}
+        <InternshipSection onOpenResume={() => setResumeOpen(true)} />
+
+        {/* 7. Education Timeline Section */}
+        <section id="education" className="border-b border-[#DFCEBA] bg-[#FFF9F0] py-20 md:py-24">
           <div className="mx-auto max-w-[1200px] px-6 md:px-10">
             <span className="inline-block h-1 w-10 rounded-sm bg-[#A7D8F0]" aria-hidden="true" />
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#3E2C23]">
               Education
             </h2>
 
-            <div className="mt-10 relative pl-8 before:absolute before:top-2 before:bottom-2 before:left-[11px] before:w-px before:bg-[#E5D8C8]">
+            <div className="mt-10 relative pl-8 before:absolute before:top-2 before:bottom-2 before:left-[11px] before:w-px before:bg-[#DFCEBA]">
               {EDUCATION_TIMELINE.map((edu) => (
                 <div key={edu.id} className="relative">
                   {/* Timeline Node */}
@@ -179,10 +183,10 @@ export default function App() {
                     <span className="h-2 w-2 rounded-full bg-[#3E2C23]" />
                   </span>
 
-                  <div className="card-elevated rounded-2xl border border-[#E5D8C8] bg-[#FFF9F0] p-7 md:p-8">
+                  <div className="card-elevated rounded-2xl border border-[#DFCEBA] bg-[#F5EBDD]/55 p-7 md:p-8">
                     <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
                       <div className="flex items-center gap-3">
-                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#DCEFFA] text-[#3E2C23]">
+                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#A7D8F0] bg-[#DCEFFA] text-[#3E2C23]">
                           <GraduationCap className="h-5 w-5" strokeWidth={1.75} />
                         </span>
                         <div>
@@ -195,7 +199,7 @@ export default function App() {
                         </div>
                       </div>
 
-                      <span className="self-start rounded-md bg-[#DCEFFA] px-3 py-1 font-mono text-xs font-semibold text-[#3E2C23] tabular-nums sm:self-center">
+                      <span className="self-start rounded-md border border-[#A7D8F0] bg-[#DCEFFA] px-3 py-1 font-mono text-xs font-semibold text-[#3E2C23] tabular-nums sm:self-center">
                         {edu.duration}
                       </span>
                     </div>
@@ -213,8 +217,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. Certifications Section */}
-        <section id="certificates" className="border-b border-[#E5D8C8] bg-[#FFF9F0] py-20 md:py-24">
+        {/* 8. Certifications Section */}
+        <section id="certificates" className="border-b border-[#DFCEBA] bg-[#F5EBDD] py-20 md:py-24">
           <div className="mx-auto max-w-[1200px] px-6 md:px-10">
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div>
